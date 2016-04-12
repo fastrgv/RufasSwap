@@ -4,8 +4,12 @@ RufasSwap is a simple permuted picture puzzle for kids that runs on Mac OS-X and
 Click on the large tar.gz file under releases for all source & binaries.
 
 
-# RufaSwap Beta 2.3
+# RufaSwap Beta 2.3.1
 ## What's new (newest @ top):
+
+**12apr16 v2.3.1**
+
+* Important library update for Gnu/Linux users on 27% of distros that do not provide FLAC, ogg, vorbis libraries.  Missing softlinks caused run failure.  That is now fixed.
 
 
 **19feb16 v2.3**
@@ -55,19 +59,22 @@ Works on Macs running OS-X and PCs running GNU/Linux.
 ----------------------------------------------
 ## Build instructions for Rufaswap
 
-Two [pre-compiled] binary executables are provided, one for gnu/linux and one for OS-X.  The static OSX executable is intended to have minimal runtime requirements:   rufaswap_osx.  The other binary, rufaswap_gnu, is intended to run on 64-bit linux in the presence of the directory "libs", which contains some dynamically loaded libraries that can be, but need not be present on a target system:  SDL2, SFML.
+Two [pre-compiled] binary executables are provided, one for gnu/linux and one for OS-X.  The static OSX executable is intended to have minimal runtime requirements:   rufaswap_osx.  The other binary, rufaswap_gnu, is intended to run on 64-bit linux in the presence of the directory "libs", which contains some dynamically loaded libraries that can be, but need not be present on a target system:  FLAC,ogg,vorbis,openal.
 
 Build scripts are now described:
 
 -------------------------------------------------------
-MacOSX:
+MacOSX => ocmp.sh:
 
-<ocmp.sh>:  build script for generating a portable executable that will run on most OS-X platforms whether or not they have non-standard libraries such as SDL2, SFML installed.  I used this to build the executable that I deliver, named rufaswap_osx.
+build script for generating a portable executable that will run on most OS-X platforms whether or not they have non-standard libraries such as SDL2, SFML installed.  I used this to build the executable that I deliver, named rufaswap_osx.
 
 ------------------------------------------------------
-GNU/Linux:  
+GNU/Linux => scmp.sh:
 
-<lcmp.sh>:  utilizes the relocatable libraries that I deliver in this bundle under ./libs/.  I use this to build the gnu/linux executable that I deliver, named rufaswap_gnu, which should run in the presence of ./libs, whether or not your system has the libraries in it.  If this binary does not run on your linux distribution, then you will have to try to recompile it yourself with this script.
+utilizes the relocatable libraries that I deliver in this bundle under ./libs/.  I use this to build the gnu/linux executable that I deliver, named rufaswap_gnu, which should run in the presence of ./libs, whether or not your system has the libraries in it.  If this binary does not run on your linux distribution, then you will have to try to recompile it yourself with this script.
+
+If the delivered linux binary does not run on your distro, recompile with scmp.sh
+
 
 ------------------------------------------------------
 ## Running:
