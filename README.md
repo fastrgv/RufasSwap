@@ -79,14 +79,14 @@ If the delivered linux binary does not run on your distro, recompile with scmp.s
 ------------------------------------------------------
 ## Running:
 
-Unzip the archive and you will see a new directory appear with a name like <bundle+date>", that you should rename to something like <install_directory>.  
+Unzip the archive and you will see a new directory appear with a name like (bundle+date), that you should rename to something like (install_directory).  
 
-Users should then cd to <install_directory>, then, at the command line, type the executable name to start the game.
+Linux users should then cd to <install_directory>, then, at the command line, type the executable name to start the game.
+Linux users may also double click the icon of rufaswap_gnu in file manager.
 
-Mac users please note:  this game is initiated by opening a terminal, navigating to the <install_directory>, and typing the executable-name on the command line.
+Mac users note that this game may be initiated in two ways, also.  First, by opening a terminal, navigating to the (install_directory), and typing rufaswap_osx on the command line.  Second by navigating to the installation directory in Finder and clicking the "rufaswap.app" icon named "RufasSwap".
 
 The <install_directory> should contain subdirectories named "data", "libs", "pix".
-
 
 So, at the command line type:
 	rufaswap_gnu ( or rufaswap_osx )
