@@ -4,8 +4,14 @@ RufasSwap is a simple permuted picture puzzle for kids that runs on Mac OS-X and
 Click on the large tar.gz file under releases for all source & binaries.
 
 
-# RufaSwap Beta 2.3.1
+# RufaSwap v2.3.2
 ## What's new (newest @ top):
+
+**02jul16 v2.3.2**
+
+* Updated to use ada-intrinsic pseudo-random numbers, including a time dependent randomization so each run is different.
+* Improved snd4ada.cpp, whoosh sound.
+
 
 **12apr16 v2.3.1**
 
