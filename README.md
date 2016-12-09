@@ -4,11 +4,17 @@
 RufasSwap is a simple permuted picture puzzle for kids that runs on Mac OS-X and GNU Linux
 
 Click on the large tar.gz file under releases for all source & binaries, or try this link:
-https://github.com/fastrgv/RufasSwap/releases/download/v2.3.2/rswap2jul16.tar.gz
+https://github.com/fastrgv/RufasSwap/releases/download/v2.3.3/rswap9dec16.tar.gz
 
 
-# RufaSwap v2.3.2
+# RufaSwap  v2.3.3
 ## What's new (newest @ top):
+
+
+**10dec16 v2.3.3**
+
+* Added interesting new (u)-key option to toggle uneven random partitions.
+
 
 **02jul16 v2.3.2**
 
@@ -21,9 +27,10 @@ https://github.com/fastrgv/RufasSwap/releases/download/v2.3.2/rswap2jul16.tar.gz
 * Important library update for Gnu/Linux users on 27% of distros that do not provide FLAC, ogg, vorbis libraries.  Missing softlinks caused run failure.  That is now fixed.
 
 
+
 **19feb16 v2.3**
 
-* Added Mac binary bundle that acts much more like a typical Mac App.  This app is delivered in the installation directory, but could be moved elsewhere, such as your personal Applications directory [and initiated with a click].
+* Added Mac binary bundle that acts much more like a typical Mac App.  This app is delivered in the installation directory, but could be moved elsewhere, such as your personal Applications directory [and initiated with a click].  Note that there are some soft [symbolic] links in the bundle that are resolved automatically when copied with the command "cp -r rufaswap.app destination-directory".
 * Generalized utex package.
 * Improved help screen.
 
@@ -63,14 +70,16 @@ Works on Macs running OS-X and PCs running GNU/Linux.
 
 ## Build Requirement:
  * a recent gnat compiler;
+ * Xcode g++ compiler, if using OS-X
 
 
 ----------------------------------------------
 ## Build instructions for Rufaswap
 
-Two [pre-compiled] binary executables are provided, one for gnu/linux and one for OS-X.  The static OSX executable is intended to have minimal runtime requirements:   rufaswap_osx.  The other binary, rufaswap_gnu, is intended to run on 64-bit linux in the presence of the directory "libs", which contains some dynamically loaded libraries that can be, but need not be present on a target system:  FLAC,ogg,vorbis,openal.
+Two [pre-compiled] binary executables are provided, one for gnu/linux and one for OS-X.  The static OSX executable is intended to have minimal runtime requirements:   rufaswap_osx.  The other binary, rufaswap_gnu, is intended to run on 64-bit linux in the presence of the directory "libs", which contains some dynamically loaded libraries that can be, but need not be present on a target system:  
+SDL2, SFML, FLAC, ogg, vorbis, & openal.
 
-Build scripts are now described:
+Build scripts are now described;  and due to a recent script change, a linux build machine need not have a C++ compiler installed.  Only GNAT is required.
 
 -------------------------------------------------------
 MacOSX => ocmp.sh:
@@ -80,22 +89,40 @@ build script for generating a portable executable that will run on most OS-X pla
 ------------------------------------------------------
 GNU/Linux => scmp.sh:
 
-utilizes the relocatable libraries that I deliver in this bundle under ./libs/.  I use this to build the gnu/linux executable that I deliver, named rufaswap_gnu, which should run in the presence of ./libs, whether or not your system has the libraries in it.  If this binary does not run on your linux distribution, then you will have to try to recompile it yourself with this script.
+utilizes the relocatable libraries that I deliver in this bundle under ./libs/.  I use this to build the gnu/linux executable that I deliver, named rufaswap_gnu, which should run in the presence of ./libs, whether or not your system has the libraries in it.
 
-If the delivered linux binary does not run on your distro, recompile with scmp.sh
+The current build is compiled on OpenSUSE v13.2, and uses GLIBC 2.14 [dating from june 2011].  This generally means that if your linux distro uses glibc v2.14 or newer, then the prebuilt binary should probably run on your system (and be rebuildable).
+
+If the delivered linux binary does not run...
+
+* Manually install GNAT GPL from libre.adacore.com/download/.
+* Rerun the compile script scmp.sh, or lcmp.sh.
+
+
+### Link Problems during linux build:
+
+On a linux build machine, you might have minor link errors, depending on its configuration.  If you are missing "libz", you can simply copy "libz.so" from /usr/gnat/lib/gps/ into /usr/local/lib/.  If "libGL" cannot be found, this literally means "libGL.so" was absent.  But you might have "libGL.so.1" present.  In this case, simply create a softlink by changing to the libGL directory, then type the line:
+
+sudo ln -s libGL.so.1 libGL.so  (and enter the admin password)
+
+whence the linker should now be able to find what it wants.
+
 
 
 ------------------------------------------------------
 ## Running:
 
-Unzip the archive and you will see a new directory appear with a name like (bundle+date), that you should rename to something like (install_directory).  
+Unzip the archive and you will see a new directory appear with a name like bundle_date, that you should rename to something like install_directory.  
 
-Linux users should then cd to (install_directory), then, at the command line, type the executable name to start the game.
+Users should then cd to install_directory, then, at the command line, type the executable name to start the game.
+
 Linux users may also double click the icon of rufaswap_gnu in file manager.
 
-Mac users note that this game may be initiated in two ways, also.  First, by opening a terminal, navigating to the (install_directory), and typing rufaswap_osx on the command line.  Second by navigating to the installation directory in Finder and clicking the "rufaswap.app" icon named "RufasSwap".
+Mac users note that this game may be initiated in two ways, also.  First, by opening a terminal, navigating to the install_directory, and typing rufaswap_osx on the command line.  Second by navigating to the installation directory in Finder and clicking the "rufaswap.app" icon named "RufasSwap".
+ 
 
-The <install_directory> should contain subdirectories named "data", "libs", "pix".
+The install_directory should contain subdirectories named "data", "libs", "pix".
+
 
 So, at the command line type:
 	rufaswap_gnu ( or rufaswap_osx )
@@ -105,6 +132,7 @@ To swap two blocks, click the cursor on them.  The first selection is highlighte
 Press (n) or (p) to go to the Next or Previous picture;
 
 Press (m) or (f) to make puzzle harder or easier [More or Fewer slices];
+Press (u) to toggle uneven partitions;
 
 Press (esc) to quit.
 
@@ -140,4 +168,8 @@ The particular choices of sound files delivered are not essential to the functio
 
 ### ImageFiles (*.png)
 For text-textures were created using gimp and are covered by the GNU GPL v3 license.  Likewise for other photo images, all of which were taken by the author.
+
+----------------------------------------------
+## Best Download Site for all my games:
+https://github.com/fastrgv?tab=repositories
 
