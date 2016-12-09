@@ -4,6 +4,7 @@
 RufasSwap is a simple permuted picture puzzle for kids that runs on Mac OS-X and GNU Linux
 
 Click on the large tar.gz file under releases for all source & binaries, or try this link:
+
 https://github.com/fastrgv/RufasSwap/releases/download/v2.3.3/rswap9dec16.tar.gz
 
 
