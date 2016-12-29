@@ -5,11 +5,17 @@ RufasSwap is a simple permuted picture puzzle for kids that runs on Mac OS-X and
 
 Click on the large tar.gz file under releases for all source & binaries, or try this link:
 
-https://github.com/fastrgv/RufasSwap/releases/download/v2.3.3/rswap9dec16.tar.gz
+https://github.com/fastrgv/RufasSwap/releases/download/v2.3.4/swap30dec16.tar.gz
 
 
-# RufaSwap  v2.3.3
+
+# RufaSwap  v2.3.4
 ## What's new (newest @ top):
+
+**30dec16 v2.3.4**
+
+* Improved linux build system to be compatible with more linux distros.
+* Improved OpenGL coding to run on embedded graphics hardware.
 
 
 **10dec16 v2.3.3**
@@ -106,7 +112,8 @@ On a linux build machine, you might have minor link errors, depending on its con
 
 sudo ln -s libGL.so.1 libGL.so  (and enter the admin password)
 
-whence the linker should now be able to find what it wants.
+whence the linker should now be able to find what it wants.  But if there is more than one file libGL.so present on your system, make sure you use the best one;  i.e. the one that uses accelerated graphics.
+
 
 
 
