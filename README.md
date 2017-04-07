@@ -5,67 +5,28 @@ RufasSwap is a simple permuted picture puzzle for kids that runs on Mac OS-X and
 
 Click on the large tar.gz file under releases for all source & binaries, or try this link:
 
-https://github.com/fastrgv/RufasSwap/releases/download/v2.3.5/swap4jan17.tar.gz
-
-
-# RufaSwap  v2.3.5
-## What's new (newest @ top):
-
-**4jan17 v2.3.5**
-
-* Updated to use new SFML libs.
-* Corrected a duplicate window glitch.
-* Refined compiler scripts.
-
-**30dec16 v2.3.4**
-
-* Improved linux build system to be compatible with more linux distros.
-* Improved OpenGL coding to run on embedded graphics hardware.
-
-
-**10dec16 v2.3.3**
-
-* Added interesting new (u)-key option to toggle uneven random partitions.
-
-
-**02jul16 v2.3.2**
-
-* Updated to use ada-intrinsic pseudo-random numbers, including a time dependent randomization so each run is different.
-* Improved snd4ada.cpp, whoosh sound.
-
-
-**12apr16 v2.3.1**
-
-* Important library update for Gnu/Linux users on 27% of distros that do not provide FLAC, ogg, vorbis libraries.  Missing softlinks caused run failure.  That is now fixed.
 
 
 
-**19feb16 v2.3**
+# RufaSwap  v2.3.6
 
-* Added Mac binary bundle that acts much more like a typical Mac App.  This app is delivered in the installation directory, but could be moved elsewhere, such as your personal Applications directory [and initiated with a click].  Note that there are some soft [symbolic] links in the bundle that are resolved automatically when copied with the command "cp -r rufaswap.app destination-directory".
-* Generalized utex package.
-* Improved help screen.
+**7apr17, v2.3.6**
 
+* Better error checking in shader package;
+* Removed OpenGL-deprecated functions that could cause aborts;
+* Revised directory structure, simplified codes;
 
-**29nov15 v2.2**
-
- * Improved PNG loader procedure that handles either RGBA or RGB image files for textures.  This means most of your own PNG images should work.  Thusly, it now works with all of the pictures delivered.
-
-
-**20nov15 v2.1**
-
- * initial rewrite in the Ada language of its c++ predecessor.
- * this version does not yet handle RGB images, as did the c++ predecessor.
-
-
+### See full revision history at end of file
 
 ----------------------------------
-Rufaswap is a simple permuted picture puzzle where the challenge is to restore the picture elements to their proper order.  Two elements are selected with cursor clicks to initiate a swap.  User controls the level of difficulty.
+## Rufaswap
+Rufaswap is a simple permuted picture puzzle app where the challenge is to restore the picture elements to their proper place.  Two elements are selected with cursor clicks to initiate a swap.  User controls the level of difficulty by choosing the number of slices.
 
 It uses a thin SDL2 binding from Dan Vazquez, a thin OpenGL binding from "Lumen", a PNG reader for Ada by Stephen Sanguine, and SFML-Audio (because of its elegant audio interface).
 
-
 Works on Macs running OS-X and PCs running GNU/Linux.
+
+Simply unzip and run.  If the binary executables do not run on your system then follow the build instructions below.
 
 ----------------------------------
 
@@ -94,30 +55,31 @@ SDL2, SFML, FLAC, ogg, vorbis, & openal.
 Build scripts are now described;  and due to a recent script change, a linux build machine need not have a C++ compiler installed.  Only GNAT is required.
 
 -------------------------------------------------------
-MacOSX => ocmp.sh:
+MacOSX => ocmpss.sh:
 
 build script for generating a portable executable that will run on most OS-X platforms whether or not they have non-standard libraries such as SDL2, SFML installed.  I used this to build the executable that I deliver, named rufaswap_osx.
 
 ------------------------------------------------------
-GNU/Linux => scmp.sh:
+GNU/Linux => lcmpd.sh:
 
-utilizes the relocatable libraries that I deliver in this bundle under ./libs/.  I use this to build the gnu/linux executable that I deliver, named rufaswap_gnu, which should run in the presence of ./libs, whether or not your system has the libraries in it.
+utilizes some relocatable libraries that I deliver in this bundle under ./libs/.  I use this to build the gnu/linux executable that I deliver, named rufaswap_gnu, which should run in the presence of ./libs, whether or not your system has the libraries in it.
 
-The current build is compiled on OpenSUSE v13.2, and uses GLIBC 2.14 [dating from june 2011].  This generally means that if your linux distro uses glibc v2.14 or newer, then the prebuilt binary should probably run on your system (and be rebuildable).
+The current build uses GLIBC 2.14 [dating from june 2011].  This generally means that if your linux distro uses glibc v2.14 or newer, then the prebuilt binary should probably run on your system (and be rebuildable).
 
 If the delivered linux binary does not run...
 
 * Manually install GNAT GPL from libre.adacore.com/download/.
-* Rerun the compile script scmp.sh, or lcmp.sh.
+* Rerun the compile script lcmpd.sh, or lcmpss.sh.
 
 
 ### Link Problems during linux build:
 
-On a linux build machine, you might have minor link errors, depending on its configuration.  If you are missing "libz", you can simply copy "libz.so" from /usr/gnat/lib/gps/ into /usr/local/lib/.  If "libGL" cannot be found, this literally means "libGL.so" was absent.  But you might have "libGL.so.1" present.  In this case, simply create a softlink by changing to the libGL directory, then type the line:
+On a linux build machine, you might have fixable link errors, depending on its configuration.  If you are missing "libz", you can simply copy "libz.so" from /usr/gnat/lib/gps/ into /usr/local/lib/.  If "libGL" cannot be found, this literally means "libGL.so" was absent.  But you might have "libGL.so.1" present.  In this case, simply create a softlink by changing to the libGL directory, then type the line:
 
 sudo ln -s libGL.so.1 libGL.so  (and enter the admin password)
 
 whence the linker should now be able to find what it wants.  But if there is more than one file libGL.so present on your system, make sure you use the best one;  i.e. the one that uses accelerated graphics.
+
 
 
 
@@ -148,6 +110,8 @@ Press (m) or (f) to make puzzle harder or easier [More or Fewer slices];
 Press (u) to toggle uneven partitions;
 
 Press (esc) to quit.
+
+Note that you can use your own pictures if they are png-format files,  although several photos taken by the author are included.
 
 
 Please send questions, comments or corrections to fastrgv@gmail.com
@@ -186,3 +150,51 @@ For text-textures were created using gimp and are covered by the GNU GPL v3 lice
 ## Best Download Site for all my games:
 https://github.com/fastrgv?tab=repositories
 
+
+## Revision History:
+
+**4jan17 v2.3.5**
+
+* Updated to use new SFML libs.
+* Corrected a duplicate window glitch.
+* Refined compiler scripts.
+
+
+**30dec16 v2.3.4**
+
+* Improved linux build system to be compatible with more linux distros.
+* Improved OpenGL coding to run even on embedded graphics hardware.
+
+
+**10dec16 v2.3.3**
+
+* Added interesting new (u)-key option to toggle uneven random partitions.
+
+
+**02jul16 v2.3.2**
+
+* Updated to use ada-intrinsic pseudo-random numbers, including a time dependent randomization so each run is different.
+* Improved snd4ada.cpp, whoosh sound.
+
+
+**12apr16 v2.3.1**
+
+* Important library update for Gnu/Linux users on 27% of distros that do not provide FLAC, ogg, vorbis libraries.  Missing softlinks caused run failure.  That is now fixed.
+
+
+**19feb16 v2.3**
+
+* Added Mac binary bundle that acts much more like a typical Mac App.  This app is delivered in the installation directory, but could be moved elsewhere, such as your personal Applications directory [and initiated with a click].  Note that there are some soft [symbolic] links in the bundle that are resolved automatically when copied with the command "cp -r rufaswap.app destination-directory".
+* Generalized utex package.
+* Improved help screen.
+
+
+**29nov15 v2.2**
+
+ * Improved PNG loader procedure that handles either RGBA or RGB image files for textures.  This means most of your own PNG images should work.  Thusly, it now works with all of the pictures delivered.
+
+
+**20nov15 v2.1**
+
+ * initial rewrite in the Ada language of its c++ predecessor.
+ * this version does not yet handle RGB images, as did the c++ predecessor.
