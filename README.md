@@ -9,7 +9,17 @@ https://github.com/fastrgv/RufasSwap/releases/download/v2.3.6/swap7apr17.tar.gz
 
 
 
-# RufaSwap  v2.3.6
+# RufaSwap  v2.3.7
+
+
+**ver 2.3.7 -- 5nov17**
+* Updated linux scripts to use a) SFML v2.4.2;  b) AdaCore 2017;
+* Note that AdaCore 2017 works on OS-X with no changes.
+* Added startup messages listing OGL profile & version;
+* added prebuilt executables for msWindows;
+* added working build scripts for msWindows;
+
+
 
 **7apr17, v2.3.6**
 
@@ -25,7 +35,7 @@ Rufaswap is a simple permuted picture puzzle app where the challenge is to resto
 
 It uses a thin SDL2 binding from Dan Vazquez, a thin OpenGL binding from "Lumen", a PNG reader for Ada by Stephen Sanguine, and SFML-Audio (because of its elegant audio interface).
 
-Works on Macs running OS-X and PCs running GNU/Linux.
+Works on windows(mswin32),Macs running OS-X and PCs running GNU/Linux.
 
 Simply unzip and run.  If the binary executables do not run on your system then follow the build instructions below.
 
@@ -35,8 +45,8 @@ Simply unzip and run.  If the binary executables do not run on your system then 
  * Works on OS-X Retina displays;
  * Uses SFML for sound;
  * all runtime files are in ./data/
- * several *.png files are provided in ./pix/
- * you can use your own *.png files;
+ * several png files are provided in ./pix/
+ * you can use your own png files;
 
 ----------------------------------------------
 ## Run Requirements:
@@ -50,10 +60,17 @@ Simply unzip and run.  If the binary executables do not run on your system then 
 ----------------------------------------------
 ## Build instructions for Rufaswap
 
-Two [pre-compiled] binary executables are provided, one for gnu/linux and one for OS-X.  The static OSX executable is intended to have minimal runtime requirements:   rufaswap_osx.  The other binary, rufaswap_gnu, is intended to run on 64-bit linux in the presence of the directory "libs", which contains some dynamically loaded libraries that can be, but need not be present on a target system:  
-SDL2, SFML, FLAC, ogg, vorbis, & openal.
+Three [pre-compiled] binary executables are provided, 
+one for windows (rufaswap.exe), 
+one for gnu/linux (rufaswap_gnu) and one for OS-X (rufaswap_osx).  The OSX executable is intended to have minimal runtime requirements.  The linux binary, rufaswap_gnu, is intended to run on 64-bit linux in the presence of the directory "libs", which contains some dynamically loaded libraries that can be, but need not be present on a target system:  
+SDL2, SFML, FLAC, ogg, vorbis, & openal.  The windows binary requires the included DLLs to be collocated to run.
 
 Build scripts are now described;  and due to a recent script change, a linux build machine need not have a C++ compiler installed.  Only GNAT is required.
+
+-------------------------------------------------------
+msWin32 => wcmp.bat
+
+build script that requires libraries included in ./libs/win/.
 
 -------------------------------------------------------
 MacOSX => ocmpss.sh:
@@ -99,9 +116,6 @@ Mac users note that this game may be initiated in two ways, also.  First, by ope
 
 The install_directory should contain subdirectories named "data", "libs", "pix".
 
-
-So, at the command line type:
-	rufaswap_gnu ( or rufaswap_osx )
 
 To swap two blocks, click the cursor on them.  The first selection is highlighted, whence you may either click it again to deselect, or click another to swap.
 
@@ -152,7 +166,7 @@ For text-textures were created using gimp and are covered by the GNU GPL v3 lice
 https://github.com/fastrgv?tab=repositories
 
 
-## Revision History:
+## Prior Revision History:
 
 **4jan17 v2.3.5**
 
@@ -199,3 +213,4 @@ https://github.com/fastrgv?tab=repositories
 
  * initial rewrite in the Ada language of its c++ predecessor.
  * this version does not yet handle RGB images, as did the c++ predecessor.
+
