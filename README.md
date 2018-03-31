@@ -11,6 +11,13 @@ https://github.com/fastrgv/RufasSwap/releases/download/v2.3.7/rswap9nov17.tar.gz
 
 # RufaSwap  v2.3.7
 
+**ver 2.3.8 -- 1apr18**
+
+* Now using intrinsic/robust Exists();
+* Improved & uninverted font;
+* Added GPR build scripts;
+* Simplified OSX build;
+
 
 **ver 2.3.7 -- 5nov17**
 * Updated linux scripts to use a) SFML v2.4.2;  b) AdaCore 2017;
