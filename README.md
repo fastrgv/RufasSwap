@@ -9,7 +9,13 @@ https://github.com/fastrgv/RufasSwap/releases/download/v2.3.8/sw1apr18.tar.gz
 
 
 
-# RufaSwap  v2.3.7
+# RufaSwap
+
+**ver 2.3.9 -- 05jul18**
+
+* Put Windows DLLs, EXEs into ./binw32/
+* Now properly handle DOS-formatted resume file.
+* Improved portability of linux build.
 
 **ver 2.3.8 -- 1apr18**
 
@@ -110,11 +116,15 @@ whence the linker should now be able to find what it wants.  But if there is mor
 
 
 ------------------------------------------------------
-## Running:
+## Setup & Running:
 
-Unzip the archive and you will see a new directory appear with a name like bundle_date, that you should rename to something like install_directory.  
+Unzip the archive.
 
-Users should then cd to install_directory, then, at the command line, type the executable name to start the game.
+Open a commandline terminal, and cd to the install directory.
+
+At the command line, type the executable name to start the game.
+
+Windows users type binw32/rufaswap.exe from the install directory.
 
 Linux users may also double click the icon of rufaswap_gnu in file manager.
 
