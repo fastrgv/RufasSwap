@@ -11,6 +11,12 @@ https://github.com/fastrgv/RufasSwap/releases/download/v2.3.9/sw5jul18.tar.gz
 
 # RufaSwap
 
+**ver 2.4.0 -- 29nov18**
+
+* Now using sdl v207 uniformly on all platforms;
+* Now using sfml v250 uniformly;
+
+
 **ver 2.3.9 -- 05jul18**
 
 * Put Windows DLLs, EXEs into ./binw32/
