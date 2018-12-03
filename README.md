@@ -11,6 +11,11 @@ https://github.com/fastrgv/RufasSwap/releases/download/v2.4.0/sw29nov18.tar.gz
 
 # RufaSwap
 
+**ver 2.4.1 -- 4dec18**
+
+* Updated to SDL2 v2.0.8 (all 3 platforms);
+
+
 **ver 2.4.0 -- 29nov18**
 
 * Now using sdl v207 uniformly on all platforms;
