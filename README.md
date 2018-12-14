@@ -7,6 +7,9 @@ Click on the large tar.gz file under releases for all source & binaries, or try 
 
 https://github.com/fastrgv/RufasSwap/releases/download/v2.4.1/sw4dec18.tar.gz
 
+or for Windows users:
+https://github.com/fastrgv/RufasSwap/releases/download/v2.4.1/sw4dec18tar.zip
+
 
 
 # RufaSwap
