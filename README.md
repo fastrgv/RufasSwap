@@ -132,7 +132,11 @@ whence the linker should now be able to find what it wants.  But if there is mor
 ------------------------------------------------------
 ## Setup & Running:
 
-Unzip the archive.
+
+Unzip the archive.  On Windows, 7z [www.7-zip.org] works well for this;  but so does the intrinsic command "tar -xf [filename].tar.gz", which extracts everything into the current directory.
+
+Windows users may see some error messages (that may be ignored) pertaining to directory links.  Directory links are needed only on OSX & Linux.
+
 
 Open a commandline terminal, and cd to the install directory.
 
