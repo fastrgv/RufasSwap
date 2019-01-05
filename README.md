@@ -14,6 +14,11 @@ https://github.com/fastrgv/RufasSwap/releases/download/v2.4.1/sw4dec18tar.zip
 
 # RufaSwap
 
+**ver 2.4.2 -- 6jan19**
+
+* Now deliver 7z archives;
+* Added closeWindow event handler;
+
 **ver 2.4.1 -- 4dec18**
 
 * Updated to SDL2 v2.0.8 (all 3 platforms);
