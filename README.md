@@ -3,7 +3,7 @@
 # RufasSwap
 RufasSwap is a simple permuted picture puzzle for kids that runs on Mac OS-X and GNU Linux
 
-Click on the large tar.gz file under releases for all source & binaries, or try this link:
+Click on the large 7z file under releases for all source & binaries, or try this link:
 
 https://github.com/fastrgv/RufasSwap/releases/download/v2.4.2/sw6jan19.7z
 
@@ -12,6 +12,11 @@ https://github.com/fastrgv/RufasSwap/releases/download/v2.4.2/sw6jan19.7z
 
 
 # RufaSwap
+
+**ver 2.4.3 -- 5mar19**
+
+* Fixed error reading session-save-file;
+* Added high contrast text for help screen;
 
 **ver 2.4.2 -- 6jan19**
 
@@ -137,7 +142,7 @@ whence the linker should now be able to find what it wants.  But if there is mor
 ## Setup & Running:
 
 
-Unzip the archive.  On Windows, 7z [www.7-zip.org] works well for this;  but so does the intrinsic command "tar -xf [filename].tar.gz", which extracts everything into the current directory.
+Unzip the archive.  On Windows, 7z [www.7-zip.org] works well for this.
 
 Windows users may see some error messages (that may be ignored) pertaining to directory links.  Directory links are needed only on OSX & Linux.
 
