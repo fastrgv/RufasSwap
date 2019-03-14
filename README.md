@@ -13,65 +13,27 @@ https://github.com/fastrgv/RufasSwap/releases/download/v2.4.3/sw4mar19.7z
 
 # RufaSwap
 
+
 **ver 2.4.3 -- 5mar19**
 
 * Fixed error reading session-save-file;
 * Added high contrast text for help screen;
+
 
 **ver 2.4.2 -- 6jan19**
 
 * Now deliver 7z archives;
 * Added closeWindow event handler;
 
-**ver 2.4.1 -- 4dec18**
-
-* Updated to SDL2 v2.0.8 (all 3 platforms);
-
-
-**ver 2.4.0 -- 29nov18**
-
-* Now using sdl v207 uniformly on all platforms;
-* Now using sfml v250 uniformly;
-
-
-**ver 2.3.9 -- 05jul18**
-
-* Put Windows DLLs, EXEs into ./binw32/
-* Now properly handle DOS-formatted resume file.
-* Improved portability of linux build.
-
-**ver 2.3.8 -- 1apr18**
-
-* Now using intrinsic/robust Exists();
-* Improved & uninverted font;
-* Added GPR build scripts;
-* Simplified OSX build;
-
-
-**ver 2.3.7 -- 5nov17**
-* Updated linux scripts to use a) SFML v2.4.2;  b) AdaCore 2017;
-* Note that AdaCore 2017 works on OS-X with no changes.
-* Added startup messages listing OGL profile & version;
-* added prebuilt executables for msWindows;
-* added working build scripts for msWindows;
-
-
-
-**7apr17, v2.3.6**
-
-* Better error checking in shader package;
-* Removed OpenGL-deprecated functions that could cause aborts;
-* Revised directory structure, simplified codes;
-
-### See full revision history at end of file
+See full revision history at end of file
 
 ----------------------------------
 ## Rufaswap
 Rufaswap is a simple permuted picture puzzle app where the challenge is to restore the picture elements to their proper place.  Two elements are selected with cursor clicks to initiate a swap.  User controls the level of difficulty by choosing the number of slices.
 
-It uses a thin SDL2 binding from Dan Vazquez, a thin OpenGL binding from "Lumen", a PNG reader for Ada by Stephen Sanguine, and SFML-Audio (because of its elegant audio interface).
+It uses a thin SDL2 binding, a thin OpenGL binding from "Lumen", a PNG reader for Ada by Stephen Sanguine, and SFML-Audio (because of its elegant audio interface).
 
-Works on windows(mswin32),Macs running OS-X and PCs running GNU/Linux.
+Works on windows(mswin32), Macs running OS-X and PCs running GNU/Linux.
 
 Simply unzip and run.  If the binary executables do not run on your system then follow the build instructions below.
 
@@ -88,6 +50,54 @@ Simply unzip and run.  If the binary executables do not run on your system then 
 ## Run Requirements:
  * graphics card/driver that supports OpenGL version 3.3 or later;
 
+
+------------------------------------------------------
+## Setup & Running:
+
+
+Mac users see "osx-setup.txt".
+Windows users see "windows-setup.txt".
+
+Unzip the archive.  On Windows, 7z [www.7-zip.org] works well for this.
+
+Open a commandline terminal, and cd to the install directory.
+
+At the command line, type the executable name to start the game.
+
+Windows users type binw32/rufaswap.exe from the install directory.
+
+Linux users may also double click the icon of rufaswap_gnu in file manager.
+
+Mac users note that this game may be initiated in two ways, also.  First, by opening a terminal, navigating to the install_directory, and typing rufaswap_osx on the command line.  Second by navigating to the installation directory in Finder and clicking the "rufaswap.app" icon named "RufasSwap".
+ 
+
+The install_directory should contain subdirectories named "data", "libs", "pix".
+
+
+To swap two blocks, click the cursor on them.  The first selection is highlighted, whence you may either click it again to deselect, or click another to swap.
+
+Press (n) or (p) to go to the Next or Previous picture;
+
+Press (m) or (f) to make puzzle harder or easier [More or Fewer slices];
+Press (u) to toggle uneven partitions;
+
+Press (esc) to quit.
+
+Note that you can use your own pictures if they are png-format files,  although several photos taken by the author are included.
+
+
+Please send questions, comments or corrections to fastrgv@gmail.com
+
+----------------------------------------------
+
+## what is special about this project?
+It uses the Ada programming language and modern OpenGL methods, with textures, shaders and uniforms.  Compiles and runs on Windows, GNU/Linux and Mac OSX systems.
+
+Focusing on portability, transparency, and open source freedom, this project relies exclusively on F.O.S.S. tools:  a thin SDL2 binding, a thin OpenGL binding, a PNG reader by Stephen Sanguine & Dimitry Anisimkov, SFML-Audio with a homebrew binding, and a GNAT compiler.
+
+
+
+----------------------------------------------
 ## Build Requirement:
  * a recent gnat compiler;
  * Xcode g++ compiler, if using OS-X
@@ -101,7 +111,7 @@ one for windows (rufaswap.exe),
 one for gnu/linux (rufaswap_gnu) and one for OS-X (rufaswap_osx).  The OSX executable is intended to have minimal runtime requirements.  The linux binary, rufaswap_gnu, is intended to run on 64-bit linux in the presence of the directory "libs", which contains some dynamically loaded libraries that can be, but need not be present on a target system:  
 SDL2, SFML, FLAC, ogg, vorbis, & openal.  The windows binary requires the included DLLs to be collocated to run.
 
-Build scripts are now described;  and due to a recent script change, a linux build machine need not have a C++ compiler installed.  Only GNAT is required.
+Build scripts are now described;  and due to a recent script change, a Windows or linux build machine need not have a C++ compiler installed.  Only GNAT is required.
 
 -------------------------------------------------------
 msWin32 => wcmp.bat
@@ -139,43 +149,6 @@ whence the linker should now be able to find what it wants.  But if there is mor
 
 
 ------------------------------------------------------
-## Setup & Running:
-
-
-Unzip the archive.  On Windows, 7z [www.7-zip.org] works well for this.
-
-Windows users may see some error messages (that may be ignored) pertaining to directory links.  Directory links are needed only on OSX & Linux.
-
-
-Open a commandline terminal, and cd to the install directory.
-
-At the command line, type the executable name to start the game.
-
-Windows users type binw32/rufaswap.exe from the install directory.
-
-Linux users may also double click the icon of rufaswap_gnu in file manager.
-
-Mac users note that this game may be initiated in two ways, also.  First, by opening a terminal, navigating to the install_directory, and typing rufaswap_osx on the command line.  Second by navigating to the installation directory in Finder and clicking the "rufaswap.app" icon named "RufasSwap".
- 
-
-The install_directory should contain subdirectories named "data", "libs", "pix".
-
-
-To swap two blocks, click the cursor on them.  The first selection is highlighted, whence you may either click it again to deselect, or click another to swap.
-
-Press (n) or (p) to go to the Next or Previous picture;
-
-Press (m) or (f) to make puzzle harder or easier [More or Fewer slices];
-Press (u) to toggle uneven partitions;
-
-Press (esc) to quit.
-
-Note that you can use your own pictures if they are png-format files,  although several photos taken by the author are included.
-
-
-Please send questions, comments or corrections to fastrgv@gmail.com
-
-------------------------------------------------------
 ## rufaswap is covered by the GNU GPL v3 license:
 
  Copyright (C) 2015  <fastrgv@gmail.com>
@@ -210,7 +183,50 @@ For text-textures were created using gimp and are covered by the GNU GPL v3 lice
 https://github.com/fastrgv?tab=repositories
 
 
-## Prior Revision History:
+## Revision History:
+
+**ver 2.4.1 -- 4dec18**
+
+* Updated to SDL2 v2.0.8 (all 3 platforms);
+
+
+**ver 2.4.0 -- 29nov18**
+
+* Now using sdl v207 uniformly on all platforms;
+* Now using sfml v250 uniformly;
+
+
+**ver 2.3.9 -- 05jul18**
+
+* Put Windows DLLs, EXEs into ./binw32/
+* Now properly handle DOS-formatted resume file.
+* Improved portability of linux build.
+
+
+**ver 2.3.8 -- 1apr18**
+
+* Now using intrinsic/robust Exists();
+* Improved & uninverted font;
+* Added GPR build scripts;
+* Simplified OSX build;
+
+
+**ver 2.3.7 -- 5nov17**
+
+* Updated linux scripts to use a) SFML v2.4.2;  b) AdaCore 2017;
+* Note that AdaCore 2017 works on OS-X with no changes.
+* Added startup messages listing OGL profile & version;
+* added prebuilt executables for msWindows;
+* added working build scripts for msWindows;
+
+
+
+**7apr17, v2.3.6**
+
+* Better error checking in shader package;
+* Removed OpenGL-deprecated functions that could cause aborts;
+* Revised directory structure, simplified codes;
+
 
 **4jan17 v2.3.5**
 
@@ -257,4 +273,5 @@ https://github.com/fastrgv?tab=repositories
 
  * initial rewrite in the Ada language of its c++ predecessor.
  * this version does not yet handle RGB images, as did the c++ predecessor.
+
 
