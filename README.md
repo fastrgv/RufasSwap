@@ -14,6 +14,16 @@ https://github.com/fastrgv/RufasSwap/releases/download/v2.4.3/sw4mar19.7z
 # RufaSwap
 
 
+26nov2019...URGENT NOTICE TO LINUX USERS:
+Due to a library incompatability, you MUST delete all
+libm*.* files from the directory ~/libs/gnu/ before this
+puzzle game will run properly.  Sorry for the inconvenience.
+The next delivery will have these library files removed.
+
+
+
+
+
 **ver 2.4.3 -- 5mar19**
 
 * Fixed error reading session-save-file;
