@@ -40,7 +40,7 @@ See full revision history at end of file
 ## Rufaswap
 Rufaswap is a simple permuted picture puzzle app where the challenge is to restore the picture elements to their proper place.  Two elements are selected with cursor clicks to initiate a swap.  User controls the level of difficulty by choosing the number of slices.
 
-It uses a thin SDL2 binding, a thin OpenGL binding from "Lumen", a PNG reader for Ada by Stephen Sanguine, and SFML-Audio (because of its elegant audio interface).
+It uses a thin GLFW2 binding, a thin OpenGL binding, a PNG reader for Ada by Stephen Sanguine, and SFML-Audio (because of its elegant audio interface).
 
 Works on windows(mswin32), Macs running OS-X and PCs running GNU/Linux.
 
@@ -48,7 +48,7 @@ Simply unzip and run.  If the binary executables do not run on your system then 
 
 ----------------------------------
 
- * Uses SDL2;
+ * Uses GLFW3;
  * Works on OS-X Retina displays;
  * Uses SFML for sound;
  * all runtime files are in ./data/
@@ -102,7 +102,7 @@ Please send questions, comments or corrections to fastrgv@gmail.com
 ## what is special about this project?
 It uses the Ada programming language and modern OpenGL methods, with textures, shaders and uniforms.  Compiles and runs on Windows, GNU/Linux and Mac OSX systems.
 
-Focusing on portability, transparency, and open source freedom, this project relies exclusively on F.O.S.S. tools:  a thin SDL2 binding, a thin OpenGL binding, a PNG reader by Stephen Sanguine & Dimitry Anisimkov, SFML-Audio with a homebrew binding, and a GNAT compiler.
+Focusing on portability, transparency, and open source freedom, this project relies exclusively on F.O.S.S. tools:  a thin GLFW3 binding, a thin OpenGL binding, a PNG reader by Stephen Sanguine & Dimitry Anisimkov, SFML-Audio with a homebrew binding, and a GNAT compiler.
 
 
 
@@ -118,7 +118,7 @@ Focusing on portability, transparency, and open source freedom, this project rel
 Three [pre-compiled] binary executables are provided, 
 one for windows (rufaswap.exe), 
 one for gnu/linux (rufaswap_gnu) and one for OS-X (rufaswap_osx).  The OSX executable is intended to have minimal runtime requirements.  The linux binary, rufaswap_gnu, is intended to run on 64-bit linux in the presence of the directory "libs", which contains some dynamically loaded libraries that can be, but need not be present on a target system:  
-SDL2, SFML, FLAC, ogg, vorbis, & openal.  The windows binary requires the included DLLs to be collocated to run.
+GLFW, SFML, FLAC, ogg, vorbis, & openal.  The windows binary requires the included DLLs to be collocated to run.
 
 Build scripts are now described;  and due to a recent script change, a Windows or linux build machine need not have a C++ compiler installed.  Only GNAT is required.
 
