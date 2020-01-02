@@ -13,6 +13,11 @@ https://github.com/fastrgv/RufasSwap/releases/download/v2.4.3/sw27nov19.7z
 
 # RufaSwap
 
+**ver 2.5.0 -- 03jan20**
+
+* Converted to GLFW3;
+* Improved compile scripts;
+* Added FreeType lettering (stex.adb);
 
 **ver 2.4.3 -- 27nov19**
 
