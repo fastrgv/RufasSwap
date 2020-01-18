@@ -13,6 +13,10 @@ https://github.com/fastrgv/RufasSwap/releases/download/v2.5.0/sw15jan20.7z
 
 # RufaSwap
 
+**ver 2.5.1 -- 18jan20**
+
+* Significant enhancement to linux portability;
+
 **ver 2.5.0 -- 03jan20**
 
 * Converted to GLFW3;
