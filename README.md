@@ -46,7 +46,7 @@ Rufaswap is a simple permuted picture puzzle app where the challenge is to resto
 
 It uses a thin GLFW2 binding, a thin OpenGL binding, a PNG reader for Ada by Stephen Sanguine, and SFML-Audio (because of its elegant audio interface).
 
-Works on windows(mswin32), Macs running OS-X and PCs running GNU/Linux.  New Linux binary runs on several linux distros!
+Works on windows(mswin32), Macs running OS-X and PCs running GNU/Linux.  New Linux binary now runs on several linux distros!
 
 Simply unzip and run.  If the binary executables do not run on your system then follow the build instructions below.
 
