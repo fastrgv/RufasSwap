@@ -14,6 +14,10 @@ https://github.com/fastrgv/RufasSwap/releases/download/v2.5.2/sw9mar20.7z
 # RufaSwap
 
 
+**ver 2.5.3 -- 18apr20**
+
+* Shaders corrected so that OpenGL v3.3 is now sufficient to run this app., thus allowing older hardware.
+
 
 **ver 2.5.2 -- 09mar20**
 
