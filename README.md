@@ -13,24 +13,24 @@ https://github.com/fastrgv/RufasSwap/releases/download/v2.5.3/sw18apr20.7z
 
 # RufaSwap
 
+**ver 2.5.4 -- 20sep20**
+* Updated all glfw libs to v3.3.2.
+* Added "rufaswap.bat" for Windows users.
+
 
 **ver 2.5.3 -- 18apr20**
-
 * Shaders corrected so that OpenGL v3.3 is now sufficient to run this app., thus allowing older hardware.
 
 
 **ver 2.5.2 -- 09mar20**
-
 * Fixed annoying window sizing mismatch (since the conversion to glfw);
 
 
 **ver 2.5.1 -- 18jan20**
-
 * Significant enhancement to linux portability;
 
 
 **ver 2.5.0 -- 03jan20**
-
 * Converted to GLFW3;
 * Improved compile scripts;
 * Added FreeType lettering (stex.adb);
@@ -76,7 +76,7 @@ Open a commandline terminal, and cd to the install directory.
 
 At the command line, type the executable name to start the game.
 
-Windows users type binw32/rufaswap.exe from the install directory.
+Windows users type "rufaswap.bat" from the install directory.
 
 Linux users may type rufaswap_gnu, or double click the icon of rufaswap_gnu in file manager.
 
