@@ -13,6 +13,10 @@ https://github.com/fastrgv/RufasSwap/releases/download/v2.5.4/sw20sep20.7z
 
 # RufaSwap
 
+**ver 2.5.5 -- 27oct20**
+* Elliminated SFML-audio entirely.
+* Greatly simplified build process.
+
 **ver 2.5.4 -- 20sep20**
 * Updated all glfw libs to v3.3.2.
 * Added "rufaswap.bat" for Windows users.
