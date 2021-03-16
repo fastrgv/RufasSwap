@@ -7,6 +7,7 @@ Click on the large 7z file under releases for all source & binaries, or try this
 
 https://github.com/fastrgv/RufasSwap/releases/download/v2.6.0/sw21feb21.7z
 
+Type "7z x filename" to extract the archive.
 
 
 
