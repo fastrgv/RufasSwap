@@ -65,6 +65,11 @@ Windows users type "rufaswap.bat".
 Linux users may type rufaswap_gnu, or double click the icon of rufaswap_gnu in file manager.
 
 The distributed linux executable requires glibc v2.14 or newer.  That means if your distribution is older, it might not run, and you will need to recompile.
+Or you can try running the windows EXEs under wine:
+
+	* wine cmd < rufaswap.bat
+	* wine binw64/rufaswap.exe
+
 
 -------------------------------------------------------------------
 Mac users note that this game may be initiated in two ways, also.  First, by opening a terminal, navigating to the install_directory, and typing rufaswap_osx on the command line.  Second by navigating to the installation directory in Finder and clicking the "rufaswap.app" icon named "RufasSwap".
