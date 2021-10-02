@@ -1,5 +1,8 @@
 ![screenshot](https://github.com/fastrgv/RufasSwap/blob/master/icon_512x512%402x.png)
 
+![screenshot](https://github.com/fastrgv/RufasSwap/blob/master/lara.gif)
+
+
 # RufasSwap
 RufasSwap is a simple permuted picture puzzle for kids that runs on Mac OS-X and GNU Linux
 
