@@ -19,6 +19,9 @@ Type "7z x filename" to extract the archive.
 
 # RufaSwap
 
+**ver 2.6.1 -- 14oct2021**
+* Enabled normal window exit.
+* Updated libraries.
 
 **ver 2.6.0 -- 21feb21**
 
