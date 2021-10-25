@@ -19,18 +19,23 @@ Type "7z x filename" to extract the archive.
 
 # RufaSwap
 
+
+**ver 2.6.2 -- 25oct2021**
+* Improved adaOpenAL binding code...rufaswap is now buildable with [GNU Compiler Collection] GNAT, as well as all AdaCore versions.
+* Updated glext64.lib.
+* In addition to the Win64 build, there is now a Win32 build for older computers.
+
 **ver 2.6.1 -- 14oct2021**
 * Enabled normal window exit.
 * Updated libraries.
+
 
 **ver 2.6.0 -- 21feb21**
 
 * Upgraded to OpenAL sound.
 
 
-#### See full revision history at end of file
-
-
+## See full revision history at end of file
 
 
 ----------------------------------
@@ -61,25 +66,28 @@ Simply unzip and run.  If the binary executables do not run on your system then 
 Mac users see "osx-setup.txt".
 Windows users see "windows-setup.txt".
 
-Unzip the archive.  On Windows, 7z [www.7-zip.org] works well for this. The proper command to extract the archive and maintain the directory structure is "7z x filename".
-
+Unzip the archive.  On Windows, 7z [www.7-zip.org] works well for this.
+The proper command to extract the archive and maintain the directory structure is "7z x filename".
 
 Open a commandline terminal, and cd to the install directory.
 
 At the command line, type the executable name to start the game.
 
 -------------------------------------------------------------------
-Windows users type "rufaswap.bat".
+Windows users type:
+
+rufaswap.bat (Windows 64-bit)
+rufaswap32.bat (Windows 32-bit)
 
 -------------------------------------------------------------------
 Linux users may type rufaswap_gnu, or double click the icon of rufaswap_gnu in file manager.
 
-The distributed linux executable requires glibc v2.14 or newer.  That means if your distribution is older, it might not run, and you will need to recompile.
-Or you can try running the windows EXEs under wine:
+The distributed linux executable requires glibc v2.14 or newer.  That means if your distribution is older, it might not run, and you will need to recompile. Or you can try running the windows EXEs under wine:
 
 	* wine cmd < rufaswap.bat
 	* wine binw64/rufaswap.exe
 
+Note: I suggest that Windows users DO NOT try running the linux executables under WSL [Windows Subsystem for Linux]; that mode is not supported. Simply use the windows version.
 
 -------------------------------------------------------------------
 Mac users note that this game may be initiated in two ways, also.  First, by opening a terminal, navigating to the install_directory, and typing rufaswap_osx on the command line.  Second by navigating to the installation directory in Finder and clicking the "rufaswap.app" icon named "RufasSwap".
@@ -120,29 +128,21 @@ Focusing on portability and open source freedom, this project relies on a thin G
 ----------------------------------------------
 ## Build instructions for Rufaswap
 
-Three [pre-compiled] binary executables are provided, 
-one for windows (rufaswap.exe), 
-one for gnu/linux (rufaswap_gnu) and one for OS-X (rufaswap_osx).  The OSX executable is intended to have minimal runtime requirements.  The linux binary, rufaswap_gnu, is intended to run on 64-bit linux in the presence of the directory "libs", which contains some dynamically loaded libraries that can be, but need not be present on a target system: freetype & GLFW3.  The windows executable requires the included DLLs to be collocated with it to run;  so it was put into its own separate directory to avoid clutter.
-
-Build scripts are now described;  and due to a recent script change, a Windows or linux build machine need not have a C++ compiler installed.  Only GNAT is required.
+Build scripts for AdaCore Ada [with its own g++] are provided. But should also work for GNAT from the GNU Compiler Collection, with minor changes.
 
 -------------------------------------------------------
+msWin32 => wcmp32.bat
+or
 msWin64 => wcmpa.bat
 
 -------------------------------------------------------
 MacOSX => ocmpss.sh:
 
-build script for generating a portable executable that will run on most OS-X platforms whether or not they have non-standard libraries such as GLFW, SFML installed.  I used this to build the executable that I deliver, named rufaswap_osx.
+build script for generating a portable executable that will run on most OS-X platforms whether or not they have non-standard libraries such as GLFW installed.  I used this to build the executable that I deliver, named rufaswap_osx.
 
 ------------------------------------------------------
 GNU/Linux => lcmpd2.sh:
 
-utilizes some relocatable libraries that I deliver in this bundle under ./libs/.  I use this to build the gnu/linux executable that I deliver, named rufaswap_gnu, which should run in the presence of ./libs, whether or not your system has the libraries in it.
-
-If the delivered linux binary does not run...
-
-* Manually install GNAT GPL from libre.adacore.com/download/.
-* Rerun the compile script lcmpd.sh, or lcmpss.sh.
 
 
 ### Link Problems during linux build:
@@ -218,4 +218,3 @@ https://github.com/fastrgv?tab=repositories
 * Converted to GLFW3;
 * Improved compile scripts;
 * Added FreeType lettering (stex.adb);
-
