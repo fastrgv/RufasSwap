@@ -142,7 +142,7 @@ build script for generating a portable executable that will run on most OS-X pla
 
 ------------------------------------------------------
 GNU/Linux => lcmpd2.sh:
-
+See also the file "gnatUserNote.txt".
 
 
 ### Link Problems during linux build:
