@@ -20,12 +20,21 @@ Type "7z x filename" to extract the archive.
 # RufaSwap
 
 
+
+**ver 2.6.3 -- 20nov2021**
+
+* Updated all GLFW libs to newer [static] version, & scripts.
+* Elliminated OpenGL-mipmap error on nvidia nouveau drivers.
+
+
 **ver 2.6.2 -- 25oct2021**
+
 * Improved adaOpenAL binding code...rufaswap is now buildable with [GNU Compiler Collection] GNAT, as well as all AdaCore versions.
 * Updated glext64.lib.
 * In addition to the Win64 build, there is now a Win32 build for older computers.
 
 **ver 2.6.1 -- 14oct2021**
+
 * Enabled normal window exit.
 * Updated libraries.
 
@@ -35,7 +44,7 @@ Type "7z x filename" to extract the archive.
 * Upgraded to OpenAL sound.
 
 
-## See full revision history at end of file
+### See full revision history at end of file
 
 
 ----------------------------------
@@ -44,17 +53,17 @@ Rufaswap is a simple permuted picture puzzle app where the challenge is to resto
 
 Works on Windows, Macs running OS-X(>=10.13) and PCs running GNU/Linux.
 
-Simply unzip and run.  If the binary executables do not run on your system then follow the build instructions below.
+-----------------------------------------------------------
+Featuring
 
-----------------------------------
-
- * Uses GLFW3 & OpenAL sound;
+ * no installation
+ * no dependencies
+ * simply unzip in your Downloads directory, and run.
  * Works on OS-X Retina displays;
- * all runtime files are in ./data/
  * several png picture files are provided in ./pix/
  * you can use your own png files;
+-----------------------------------------------------------
 
-----------------------------------------------
 ## Run Requirements:
  * graphics card/driver that supports OpenGL version 3.3 or later;
 
@@ -82,7 +91,7 @@ rufaswap32.bat (Windows 32-bit)
 -------------------------------------------------------------------
 Linux users may type rufaswap_gnu, or double click the icon of rufaswap_gnu in file manager.
 
-The distributed linux executable requires glibc v2.14 or newer.  That means if your distribution is older, it might not run, and you will need to recompile. Or you can try running the windows EXEs under wine:
+You can also run the windows EXEs under wine thusly:
 
 	* wine cmd < rufaswap.bat
 	* wine binw64/rufaswap.exe
@@ -121,7 +130,7 @@ Focusing on portability and open source freedom, this project relies on a thin G
 
 ----------------------------------------------
 ## Build Requirement:
- * a recent gnat compiler;
+ * a recent Ada compiler;
  * Xcode g++ compiler, if using OS-X>=10.13(sep2017)
 
 
@@ -141,8 +150,8 @@ MacOSX => ocmpss.sh:
 build script for generating a portable executable that will run on most OS-X platforms whether or not they have non-standard libraries such as GLFW installed.  I used this to build the executable that I deliver, named rufaswap_osx.
 
 ------------------------------------------------------
-GNU/Linux => lcmpd2.sh:
-See also the file "gnatUserNote.txt".
+GNU/Linux => lcmp.sh:
+
 
 
 ### Link Problems during linux build:
