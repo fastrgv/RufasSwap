@@ -191,7 +191,7 @@ whence the linker should now be able to find what it wants.  But if there is mor
 The particular choices of sound files delivered are not essential to the function of the game and are easily replaced.  This software is primarily intended as a tutorial example of modern OpenGL methods.  The only requirements are that sounds be in WAV format.
 
 ### SoundFiles
-...are from freesound.org and are covered by the Creative Commons Attribution noncommercial license documented in the accompanying file creativeCommons.txt.
+...are from freesound.org and are covered by the Creative Commons Attribution CC0 license.
 
 ### ImageFiles (*.png)
 For text-textures were created using gimp and are covered by the GNU GPL v3 license.  Likewise for other photo images, all of which were taken by the author.
