@@ -19,7 +19,11 @@ Type "7z x filename" to extract the archive.
 
 # RufaSwap
 
+**ver 2.6.4 -- 20jan2022**
 
+* Updated linux libs to use static libfreetype.a & libpng16.a
+* Updated Windows builds to freetype v2.11.1 DLLs (w32,w64).
+* Updated libglfw.
 
 **ver 2.6.3 -- 20nov2021**
 
