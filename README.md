@@ -19,6 +19,11 @@ Type "7z x filename" to extract the archive.
 
 # RufaSwap
 
+**ver 2.6.5 -- 16apr2022**
+
+* Reverted linux libraries to exclusively shared format for portability.
+
+
 **ver 2.6.4 -- 20jan2022**
 
 * Updated linux libs to use static libfreetype.a & libpng16.a
