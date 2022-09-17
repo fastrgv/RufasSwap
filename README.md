@@ -19,6 +19,12 @@ Type "7z x filename" to extract the archive.
 
 # RufaSwap
 
+**ver 2.6.6 -- 16sep2022**
+
+* Now using GNU Ada rather than defunct AdaCore compiler.
+
+
+
 **ver 2.6.5 -- 16apr2022**
 
 * Reverted linux libraries to exclusively shared format for portability.
