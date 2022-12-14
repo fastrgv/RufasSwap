@@ -17,46 +17,18 @@ Type "7z x filename" to extract the archive.
 
 
 
+
+
 # RufaSwap
 
-**ver 2.6.6 -- 16sep2022**
 
-* Now using GNU Ada rather than defunct AdaCore compiler.
+## What's new:
 
+**ver 2.6.7 -- 15dec2022**
 
-
-**ver 2.6.5 -- 16apr2022**
-
-* Reverted linux libraries to exclusively shared format for portability.
-
-
-**ver 2.6.4 -- 20jan2022**
-
-* Updated linux libs to use static libfreetype.a & libpng16.a
-* Updated Windows builds to freetype v2.11.1 DLLs (w32,w64).
-* Updated libglfw.
-
-**ver 2.6.3 -- 20nov2021**
-
-* Updated all GLFW libs to newer [static] version, & scripts.
-* Elliminated OpenGL-mipmap error on nvidia nouveau drivers.
-
-
-**ver 2.6.2 -- 25oct2021**
-
-* Improved adaOpenAL binding code...rufaswap is now buildable with [GNU Compiler Collection] GNAT, as well as all AdaCore versions.
-* Updated glext64.lib.
-* In addition to the Win64 build, there is now a Win32 build for older computers.
-
-**ver 2.6.1 -- 14oct2021**
-
-* Enabled normal window exit.
-* Updated libraries.
-
-
-**ver 2.6.0 -- 21feb21**
-
-* Upgraded to OpenAL sound.
+* Added Windows 64-bit build using stand-alone GNU Ada compiler.
+* Discontiued OSX development.
+* New linux build now runs on very old linux distros.
 
 
 ### See full revision history at end of file
@@ -66,17 +38,18 @@ Type "7z x filename" to extract the archive.
 ## Rufaswap
 Rufaswap is a simple permuted picture puzzle app where the challenge is to restore the picture elements to their proper place.  Two elements are selected with cursor clicks to initiate a swap.  User controls the level of difficulty by choosing the number of slices, and whether even or irregular.
 
-Works on Windows, Macs running OS-X(>=10.13) and PCs running GNU/Linux.
+Works on desktops & laptops running Windows or Linux.
 
 -----------------------------------------------------------
 Featuring
 
  * no installation
  * no dependencies
- * simply unzip in your Downloads directory, and run.
- * Works on OS-X Retina displays;
+ * simply unzip in your Downloads directory, and run;
+ * or unzip onto a USB flash drive [w/same file format] and run.
+ * Works on HiDpi displays;
  * several png picture files are provided in ./pix/
- * you can use your own png files;
+ * or, you can use your own png files;
 -----------------------------------------------------------
 
 ## Run Requirements:
@@ -87,7 +60,6 @@ Featuring
 ## Setup & Running:
 
 
-Mac users see "osx-setup.txt".
 Windows users see "windows-setup.txt".
 
 Unzip the archive.  On Windows, 7z [www.7-zip.org] works well for this.
@@ -101,21 +73,21 @@ At the command line, type the executable name to start the game.
 Windows users type:
 
 rufaswap.bat (Windows 64-bit)
-rufaswap32.bat (Windows 32-bit)
 
 -------------------------------------------------------------------
 Linux users may type rufaswap_gnu, or double click the icon of rufaswap_gnu in file manager.
 
 You can also run the windows EXEs under wine thusly:
 
-	* wine cmd < rufaswap.bat
-	* wine binw64/rufaswap.exe
+	* wine cmd < rufaswap.bat, or
+	* wine binw32/rufaswap.exe
 
-Note: I suggest that Windows users DO NOT try running the linux executables under WSL [Windows Subsystem for Linux]; that mode is not supported. Simply use the windows version.
+Note: Windows users should NOT try running the linux executables under WSL [Windows Subsystem for Linux]; that mode is not supported. Simply use the windows version.
+
+**If an older Linux system complains that /dev/dsp/ cannot be opened, prepend the "padsp" command:  "padsp <exe-name>".**
+
 
 -------------------------------------------------------------------
-Mac users note that this game may be initiated in two ways, also.  First, by opening a terminal, navigating to the install_directory, and typing rufaswap_osx on the command line.  Second by navigating to the installation directory in Finder and clicking the "rufaswap.app" icon named "RufasSwap".
- 
 
 The install_directory should contain subdirectories named "data", "libs", "pix".
 
@@ -137,7 +109,7 @@ Please send questions, comments or corrections to fastrgv@gmail.com
 ----------------------------------------------
 
 ## what is special about this project?
-Uses the Ada programming language and fully modern OpenGL methods, with textures, shaders and uniforms.  Achieves version 3.3 core profile contexts.  Compiles and runs on MSwin32, GNU/Linux and Mac OS-X systems.
+Uses the Ada programming language and fully modern OpenGL methods, with textures, shaders and uniforms.  Achieves version 3.3 core profile contexts.  Compiles and runs on MSwin32, GNU/Linux systems.
 
 Focusing on portability and open source freedom, this project relies on a thin GLFW3 binding, a thin OpenGL binding, a homebrew OpanAL binding, & a PNG reader by Stephen Sanguine.
 
@@ -146,36 +118,24 @@ Focusing on portability and open source freedom, this project relies on a thin G
 ----------------------------------------------
 ## Build Requirement:
  * a recent Ada compiler;
- * Xcode g++ compiler, if using OS-X>=10.13(sep2017)
+
+See:
+	* https://github.com/alire-project/GNAT-FSF-builds/releases
+
 
 
 ----------------------------------------------
 ## Build instructions for Rufaswap
 
-Build scripts for AdaCore Ada [with its own g++] are provided. But should also work for GNAT from the GNU Compiler Collection, with minor changes.
+Build scripts for GNU Ada [with its own g++] are provided. 
 
 -------------------------------------------------------
-msWin32 => wcmp32.bat
-or
-msWin64 => wcmpa.bat
+msWin32 => wcmp.bat
 
 -------------------------------------------------------
-MacOSX => ocmpss.sh:
-
-build script for generating a portable executable that will run on most OS-X platforms whether or not they have non-standard libraries such as GLFW installed.  I used this to build the executable that I deliver, named rufaswap_osx.
-
-------------------------------------------------------
 GNU/Linux => lcmp.sh:
 
 
-
-### Link Problems during linux build:
-
-On a linux build machine, you might have fixable link errors, depending on its configuration.  If you are missing "libz", you can simply copy "libz.so" from the AdaCore ~/lib/ directory into /usr/local/lib/.  If "libGL" cannot be found, this literally means "libGL.so" was absent.  But you might have "libGL.so.1" present.  In this case, simply create a softlink by changing to the libGL directory, then type the line:
-
-sudo ln -s libGL.so.1 libGL.so  (and enter the admin password)
-
-whence the linker should now be able to find what it wants.  But if there is more than one file libGL.so present on your system, make sure you use the best one;  i.e. the one that uses accelerated graphics.
 
 
 
@@ -184,7 +144,7 @@ whence the linker should now be able to find what it wants.  But if there is mor
 ------------------------------------------------------
 ## rufaswap is covered by the GNU GPL v3 license:
 
- Copyright (C) 2021  <fastrgv@gmail.com>
+ Copyright (C) 2022  <fastrgv@gmail.com>
 
  This program is free software: you can redistribute it and/or modify
  it under the terms of the GNU General Public License as published by
@@ -203,42 +163,40 @@ whence the linker should now be able to find what it wants.  But if there is mor
 ## Media Files for rufaswap:
 
 ### General Note
-The particular choices of sound files delivered are not essential to the function of the game and are easily replaced.  This software is primarily intended as a tutorial example of modern OpenGL methods.  The only requirements are that sounds be in WAV format.
+It is my intention to use media with copyrights or licenses that are compatible with GPLv3. Please notify me if you believe there is an incompatibility, and it will be removed ASAP, eg a CC-by-NC license is NOT GPL compatible.
+
+
 
 ### SoundFiles
-...are from freesound.org and are covered by the Creative Commons Attribution CC0 license.
+...are from freesound.org and are covered by the Creative Commons CC0 license documented in the accompanying file creativeCommons.txt.
 
 ### ImageFiles (*.png)
 For text-textures were created using gimp and are covered by the GNU GPL v3 license.  Likewise for other photo images, all of which were taken by the author.
 
 ----------------------------------------------
-## Best Download Site for all my games:
+## Download Sites for all my games:
 https://github.com/fastrgv?tab=repositories
+https://www.indiedb.com/members/fastrgv/games
+https://fastrgv.itch.io
+https://sourceforge.net/u/fastrgv/profile/
+https://gamejolt.com/@fastrgv/games
+
 
 
 ## Revision History:
 
-**ver 2.5.5 -- 27oct20**
-* Elliminated SFML-audio entirely.
-* Greatly simplified build process.
+**ver 2.6.6 -- 16sep2022**
+* Now using GNU Ada rather than defunct AdaCore compiler.
+* Using Mingw32 GNU Ada on Windows.
+
+**ver 2.6.5 -- 16apr2022**
+* Reverted linux libraries to exclusively shared format for portability.
+
+**ver 2.6.4 -- 20jan2022**
+* Updated linux libs to use static libfreetype.a & libpng16.a
+* Updated Windows builds to freetype v2.11.1 DLLs (w32,w64).
+* Updated libglfw.
 
 
-**ver 2.5.4 -- 20sep20**
-* Updated all glfw libs to v3.3.2.
-* Added "rufaswap.bat" for Windows users.
-
-**ver 2.5.3 -- 18apr20**
-* Shaders corrected so that OpenGL v3.3 is now sufficient to run this app., thus allowing older hardware.
 
 
-
-**ver 2.5.2 -- 09mar20**
-* Fixed annoying window sizing mismatch (since the conversion to glfw);
-
-**ver 2.5.1 -- 18jan20**
-* Significant enhancement to linux portability;
-
-**ver 2.5.0 -- 03jan20**
-* Converted to GLFW3;
-* Improved compile scripts;
-* Added FreeType lettering (stex.adb);
