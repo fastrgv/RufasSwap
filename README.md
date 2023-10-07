@@ -19,10 +19,18 @@ Type "7z x filename" to extract the archive.
 
 
 
+
+
 # RufaSwap
 
 
 ## What's new:
+
+
+**ver 2.6.8 -- 7oct2023**
+
+* Revived OSX support.
+
 
 **ver 2.6.7 -- 15dec2022**
 
@@ -38,7 +46,7 @@ Type "7z x filename" to extract the archive.
 ## Rufaswap
 Rufaswap is a simple permuted picture puzzle app where the challenge is to restore the picture elements to their proper place.  Two elements are selected with cursor clicks to initiate a swap.  User controls the level of difficulty by choosing the number of slices, and whether even or irregular.
 
-Works on desktops & laptops running Windows or Linux.
+Works on desktops & laptops running Windows, OSX, or Linux.
 
 -----------------------------------------------------------
 Featuring
@@ -60,14 +68,26 @@ Featuring
 ## Setup & Running:
 
 
+Mac users see "osx-setup.txt".
 Windows users see "windows-setup.txt".
 
-Unzip the archive.  On Windows, 7z [www.7-zip.org] works well for this.
-The proper command to extract the archive and maintain the directory structure is "7z x filename".
+Unzip the archive.  
+
+* On Linux & Windows, 7z [www.7-zip.org] works well for this. The proper command to extract the archive and maintain the directory structure is "7z x filename".
+
+* On OSX, Keka will handle 7z files.  The command-line for Keka works thusly:
+	* /Applications/Keka.app/Contents/MacOS/Keka --cli 7z x (filename.7z)
+
+After the archive is unzipped...
 
 Open a commandline terminal, and cd to the install directory.
 
 At the command line, type the executable name to start the game.
+
+-------------------------------------------------------------------
+Mac users type:
+
+	rufaswap_osx
 
 -------------------------------------------------------------------
 Windows users type:
@@ -75,7 +95,10 @@ Windows users type:
 rufaswap.bat (Windows 64-bit)
 
 -------------------------------------------------------------------
-Linux users may type rufaswap_gnu, or double click the icon of rufaswap_gnu in file manager.
+Linux users may type:
+	rufaswap_gnu, 
+
+or double click the icon of rufaswap in file manager.
 
 You can also run the windows EXEs under wine thusly:
 
@@ -84,12 +107,13 @@ You can also run the windows EXEs under wine thusly:
 
 Note: Windows users should NOT try running the linux executables under WSL [Windows Subsystem for Linux]; that mode is not supported. Simply use the windows version.
 
-**If an older Linux system complains that /dev/dsp/ cannot be opened, prepend the "padsp" command:  "padsp <exe-name>".**
+**If an older Linux system complains that /dev/dsp/ cannot be opened, prepend the command with "padsp",EG:  "padsp (ExeName)".**
+
 
 
 -------------------------------------------------------------------
 
-The install_directory should contain subdirectories named "data", "libs", "pix".
+	The install_directory should contain subdirectories named "data", "libs", "pix".
 
 
 To swap two blocks, click the cursor on them.  The first selection is highlighted, whence you may either click it again to deselect, or click another to swap.
@@ -111,7 +135,7 @@ Please send questions, comments or corrections to fastrgv@gmail.com
 ## what is special about this project?
 Uses the Ada programming language and fully modern OpenGL methods, with textures, shaders and uniforms.  Achieves version 3.3 core profile contexts.  Compiles and runs on MSwin32, GNU/Linux systems.
 
-Focusing on portability and open source freedom, this project relies on a thin GLFW3 binding, a thin OpenGL binding, a homebrew OpanAL binding, & a PNG reader by Stephen Sanguine.
+Focusing on portability and open source freedom, this project relies on a thin GLFW3 binding, a thin OpenGL binding, a homebrew OpanAL binding, & a PNG reader by Stephen Sanguine that uses Dmitriy Anisimkov's Zlib for Ada.
 
 
 
@@ -130,7 +154,10 @@ See:
 Build scripts for GNU Ada [with its own g++] are provided. 
 
 -------------------------------------------------------
-msWin32 => wcmp.bat
+mac/osx => ocmp.sh
+
+-------------------------------------------------------
+msWin64 => setpath64.bat; wcmp64.bat
 
 -------------------------------------------------------
 GNU/Linux => lcmp.sh:
@@ -144,7 +171,7 @@ GNU/Linux => lcmp.sh:
 ------------------------------------------------------
 ## rufaswap is covered by the GNU GPL v3 license:
 
- Copyright (C) 2022  <fastrgv@gmail.com>
+ Copyright (C) 2023  <fastrgv@gmail.com>
 
  This program is free software: you can redistribute it and/or modify
  it under the terms of the GNU General Public License as published by
@@ -196,7 +223,6 @@ https://gamejolt.com/@fastrgv/games
 * Updated linux libs to use static libfreetype.a & libpng16.a
 * Updated Windows builds to freetype v2.11.1 DLLs (w32,w64).
 * Updated libglfw.
-
 
 
 
