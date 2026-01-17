@@ -26,22 +26,29 @@ Type "7z x filename" to extract the archive.
 
 
 
+
+Permalink:
+
+https://sourceforge.net/projects/rufaswap/files/latest/download
+
+
+
 # RufaSwap
+	Permuted Picture Puzzle 
+	with OpenAL sound
 
 
 ## What's new:
 
 
+**ver 2.6.9 -- 18jan2026**
+
+* Eliminated need for installing MSVC-redistributables on Windows 10, 11.
+
+
 **ver 2.6.8 -- 7oct2023**
 
-* Revived OSX support.
-
-
-**ver 2.6.7 -- 15dec2022**
-
-* Added Windows 64-bit build using stand-alone GNU Ada compiler.
-* Discontiued OSX development.
-* New linux build now runs on very old linux distros.
+* Revived OSX support, but without a bundle, and without using Xcode.
 
 
 ### See full revision history at end of file
@@ -49,7 +56,7 @@ Type "7z x filename" to extract the archive.
 
 ----------------------------------
 ## Rufaswap
-Rufaswap is a simple permuted picture puzzle app where the challenge is to restore the picture elements to their proper place.  Two elements are selected with cursor clicks to initiate a swap.  User controls the level of difficulty by choosing the number of slices, and whether even or irregular.
+Rufaswap is a simple permuted picture puzzle app where the challenge is to restore the picture fragments to their proper place.  Two fragments are selected with cursor clicks to initiate a swap.  User controls the level of difficulty by choosing the number of slices with even or irregular spacing.
 
 Works on desktops & laptops running Windows, OSX, or Linux.
 
@@ -80,7 +87,7 @@ Unzip the archive.
 
 * On Linux & Windows, 7z [www.7-zip.org] works well for this. The proper command to extract the archive and maintain the directory structure is "7z x filename".
 
-* On OSX, Keka will handle 7z files.  The command-line for Keka works thusly:
+* On OSX, Keka works well for 7Z files. The command-line for Keka is:
 	* /Applications/Keka.app/Contents/MacOS/Keka --cli 7z x (filename.7z)
 
 After the archive is unzipped...
@@ -90,25 +97,26 @@ Open a commandline terminal, and cd to the install directory.
 At the command line, type the executable name to start the game.
 
 -------------------------------------------------------------------
-Mac users type:
+Mac/OSX users type:
 
-	rufaswap_osx
+* rufaswap_osx
 
 -------------------------------------------------------------------
-Windows users type:
+Windows 10/11 users type:
 
-rufaswap.bat (Windows 64-bit)
+* rufaswap.bat
 
 -------------------------------------------------------------------
 Linux users may type:
-	rufaswap_gnu, 
+
+* rufaswap_gnu, 
 
 or double click the icon of rufaswap in file manager.
 
 You can also run the windows EXEs under wine thusly:
 
-	* wine cmd < rufaswap.bat, or
-	* wine binw32/rufaswap.exe
+* wine cmd < rufaswap.bat, or
+* wine binw64/rufaswap.exe
 
 Note: Windows users should NOT try running the linux executables under WSL [Windows Subsystem for Linux]; that mode is not supported. Simply use the windows version.
 
@@ -118,17 +126,13 @@ Note: Windows users should NOT try running the linux executables under WSL [Wind
 
 -------------------------------------------------------------------
 
-	The install_directory should contain subdirectories named "data", "libs", "pix".
-
 
 To swap two blocks, click the cursor on them.  The first selection is highlighted, whence you may either click it again to deselect, or click another to swap.
 
-Press (n) or (p) to go to the Next or Previous picture;
-
-Press (m) or (f) to make puzzle harder or easier [More or Fewer slices];
-Press (u) to toggle uneven partitions;
-
-Press (esc) to quit.
+* Press (n) or (p) to go to the Next or Previous picture;
+* Press (m) or (f) to make puzzle harder or easier [More or Fewer slices];
+* Press (u) to toggle uneven partitions;
+* Press (esc) to quit.
 
 Note that you can use your own pictures if they are PNG files,  although several photos taken by the author are included.
 
@@ -138,7 +142,7 @@ Please send questions, comments or corrections to fastrgv@gmail.com
 ----------------------------------------------
 
 ## what is special about this project?
-Uses the Ada programming language and fully modern OpenGL methods, with textures, shaders and uniforms.  Achieves version 3.3 core profile contexts.  Compiles and runs on MSwin32, GNU/Linux systems.
+Uses the Ada programming language and fully modern OpenGL methods, with textures, shaders and uniforms.  Achieves version 3.3 core profile contexts.  Compiles and runs on Windows, OSX, and Linux systems.
 
 Focusing on portability and open source freedom, this project relies on a thin GLFW3 binding, a thin OpenGL binding, a homebrew OpanAL binding, & a PNG reader by Stephen Sanguine that uses Dmitriy Anisimkov's Zlib for Ada.
 
@@ -146,10 +150,11 @@ Focusing on portability and open source freedom, this project relies on a thin G
 
 ----------------------------------------------
 ## Build Requirement:
- * a recent Ada compiler;
+* a recent Ada compiler;
 
 See:
-	* https://github.com/alire-project/GNAT-FSF-builds/releases
+
+* https://github.com/alire-project/GNAT-FSF-builds/releases
 
 
 
@@ -174,9 +179,9 @@ GNU/Linux => lcmp.sh:
 
 
 ------------------------------------------------------
-## rufaswap is covered by the GNU GPL v3 license:
+## This app is covered by the GNU GPL v3 license:
 
- Copyright (C) 2023  <fastrgv@gmail.com>
+ Copyright (C) 2026  <fastrgv@gmail.com>
 
  This program is free software: you can redistribute it and/or modify
  it under the terms of the GNU General Public License as published by
@@ -217,6 +222,11 @@ https://gamejolt.com/@fastrgv/games
 
 ## Revision History:
 
+**ver 2.6.7 -- 15dec2022**
+* Added Windows 64-bit build using stand-alone GNU Ada compiler.
+* Discontiued OSX development.
+* New linux build now runs on very old linux distros.
+
 **ver 2.6.6 -- 16sep2022**
 * Now using GNU Ada rather than defunct AdaCore compiler.
 * Using Mingw32 GNU Ada on Windows.
@@ -228,6 +238,5 @@ https://gamejolt.com/@fastrgv/games
 * Updated linux libs to use static libfreetype.a & libpng16.a
 * Updated Windows builds to freetype v2.11.1 DLLs (w32,w64).
 * Updated libglfw.
-
 
 
