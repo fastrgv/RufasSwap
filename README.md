@@ -8,7 +8,7 @@ RufasSwap is a simple permuted picture puzzle for kids that runs on Mac OS-X and
 
 Click on the large 7z file under releases for all source & binaries, or try this link:
 
-https://github.com/fastrgv/RufasSwap/releases/download/v2.6.8/sw7oct23.7z
+https://github.com/fastrgv/RufasSwap/releases/download/v2.6.9/sw18jan26.7z
 
 Type "7z x filename" to extract the archive.
 
